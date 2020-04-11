@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import ResultComponent from './components/Result';
+import keyPadComponent from './components/Keypad';
 
 function App() {
   return (
