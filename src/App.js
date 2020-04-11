@@ -3,14 +3,25 @@ import './App.css';
 import ResultComponent from './components/Result';
 import keyPadComponent from './components/Keypad';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        
-      </header>
+class App extends Component {
+   constructor(){
+     super();
+
+     this.state = {
+          result: ""
+     }
+   }
+   render() {
+     return (
+       <div>
+          <div className="App">
+            <h1> Simple Calculator </h1>
+            <ResultComponent result={this.state.result}/> 
+            <keyPadComponent onClick={this.onClick}/>
+      </div>
     </div>
-  );
+   );
+ } 
 }
 
 export default App;
