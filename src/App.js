@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import ResultComponent from './components/Result';
-import keyPadComponent from './components/Keypad';
+import Result from './components/Result';
+import Keypad from "./components/Keypad";
 
 class App extends Component {
    constructor(){
@@ -32,6 +32,7 @@ class App extends Component {
    calculate = () => {
      try {
        this.setState({
+         // eslint-disable-next-line 
          result: (eval(this.state.result) || "") + ""
        })
      } catch (e) {
@@ -57,8 +58,8 @@ class App extends Component {
        <div>
           <div className="App">
             <h1> Simple Calculator </h1>
-            <ResultComponent result={this.state.result}/> 
-            <keyPadComponent onClick={this.onClick}/>
+            <Result result={this.state.result}/> 
+            <Keypad onClick={this.onClick}/>
       </div>
     </div>
    );
